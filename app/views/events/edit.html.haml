@@ -1,6 +1,6 @@
 - now = Time.zone.now
 
-%h1.mt-2 イベント作成
+%h1.mt-2 イベント情報編集
 
 = form_with(model: @event, class: "form-horizontal") do |f|
   #errors
@@ -21,7 +21,4 @@
   .form-group
     = f.label :content
     = f.text_area :content, class: "form-control", row: 10
-  .form-group
-    = f.label :image
-    = f.file_field :image, class: "form-control-file"
   = f.submit class: "btn btn-primary"

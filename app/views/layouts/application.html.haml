@@ -2,7 +2,7 @@
 %html
 %head
   %meta{ content: "text/html; charset=UTF-8", "http-equiv": "Content-Type" }
-  %title AwesomeEvents
+  %title イベントアプリ
   = csrf_meta_tags
   = csp_meta_tag
   = stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload"
@@ -10,16 +10,18 @@
 %body
   %header.navbar.navbar-expand-sm.navbar-light
     .container
-      = link_to "AwesomeEvents", root_path, class: "navbar-brand"
+      = link_to "イベントアプリ", root_path, class: "navbar-brand"
       %ul.navbar-nav
         %li.nav-item
           = link_to "イベントを作る", new_event_path, class: "nav-link"
+          = link_to "退会", new_retirements_path, class: "nav-link"
 
           %li.nav-item
             = link_to "ログアウト", logout_path, class: "nav-link", method: :delete
 
           %li.nav-item
-          = link_to "Gihubでログイン", "/auth/github", class: "nav-link",mehod: :post
+          = link_to "ログイン", "/auth/github", class: "nav-link",mehod: :post
+          = link_to "デモ ログイン", "/auth/github", class: "nav-link",mehod: :post
   .container
     - if flash.notice
       .alert.alert-success
